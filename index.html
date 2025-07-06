@@ -49,22 +49,20 @@
   </div>
 
   <!-- 🧠 Click outside to close -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        function openResume() {
-          document.getElementById('resumeViewer').style.display = 'block';
-        }
-    
-        window.openResume = openResume;
-    
-        window.addEventListener('click', function(e) {
-          const viewer = document.getElementById('resumeViewer');
-          if (viewer.style.display === 'block' && !viewer.contains(e.target)) {
-            viewer.style.display = 'none';
-          }
-        });
-      });
-    </script>
+  <script>
+    // ✅ Define globally
+    function openResume() {
+      document.getElementById('resumeViewer').style.display = 'block';
+    }
+  
+    // ✅ Close on outside click
+    window.addEventListener('click', function(e) {
+      const viewer = document.getElementById('resumeViewer');
+      if (viewer && viewer.style.display === 'block' && !viewer.contains(e.target)) {
+        viewer.style.display = 'none';
+      }
+    });
+  </script>
   
   <!-- <script>
     function openResume() {
