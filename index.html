@@ -30,31 +30,7 @@
         <p>Previously, I interned at <a href="https://rivian.com/">Rivian</a> working on image signal processing and object detection, and completed my MS in Electrical & Computer Engineering at <a href="https://www.ucla.edu/">UCLA</a>.</p>
         <p style="text-align:center">
           <a href="mailto:kimayamk28@gmail.com">Email</a> &nbsp;/&nbsp;
-          <!-- <a href="#" onclick="window.open('cv/Kimaya_Resume_2025_v1.pdf', 'cvWindow', 'width=1000,height=800'); return false;">CV</a> &nbsp;/&nbsp; -->
-         <!-- Resume Modal -->
-          <div id="resumeModal" style="display:none; position:fixed; top:5%; left:5%; width:90%; height:90%; background:white; border:2px solid #ccc; z-index:9999; box-shadow: 0 0 20px rgba(0,0,0,0.5);">
-            <div style="text-align:right; padding:10px;">
-              <button onclick="closeResume()" style="font-size:16px;">Close ✖</button>
-            </div>
-            <iframe src="cv/Kimaya_Resume_2025_v1.pdf" width="100%" height="90%"></iframe>
-          </div>
-
-          <!-- Backdrop -->
-          <div id="resumeBackdrop" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9998;" onclick="closeResume()"></div>
-
-          <!-- Modal JS -->
-          <script>
-            function openResume() {
-              document.getElementById('resumeModal').style.display = 'block';
-              document.getElementById('resumeBackdrop').style.display = 'block';
-            }
-
-            function closeResume() {
-              document.getElementById('resumeModal').style.display = 'none';
-              document.getElementById('resumeBackdrop').style.display = 'none';
-            }
-          </script>
-
+          <a href="#" onclick="openResume(); return false;">CV</a> &nbsp;/&nbsp;
           <a href="https://scholar.google.com/citations?user=qFvRlQEAAAAJ&hl=en">Google Scholar</a> &nbsp;/&nbsp;
           <a href="https://www.linkedin.com/in/kimaya-k-37647a165/">LinkedIn</a> &nbsp;/&nbsp;
           <a href="https://github.com/Kimayak">GitHub</a>
@@ -139,11 +115,33 @@
     </tr>
   </table>
 
-   <!-- Attribution Section 1 -->
-   <hr style="margin-top: 40px;">
-   <p style="text-align:center; font-size:14px; color:gray">
+
+  <!-- 🪟 Resume Viewer -->
+  <div id="resumeViewer"
+       style="display:none; position:fixed; top:10%; left:10%; width:80%; height:80%; background:white; border:2px solid #ccc; z-index:1000; box-shadow: 0 0 20px rgba(0,0,0,0.4);">
+    <iframe src="cv/Kimaya_Resume_2025_v1.pdf"
+            style="width:100%; height:100%; border:none;"></iframe>
+  </div>
+
+  <!-- 🧠 Click outside to close -->
+  <script>
+    function openResume() {
+      document.getElementById('resumeViewer').style.display = 'block';
+    }
+
+    window.addEventListener('click', function(e) {
+      const viewer = document.getElementById('resumeViewer');
+      if (viewer.style.display === 'block' && !viewer.contains(e.target)) {
+        viewer.style.display = 'none';
+      }
+    });
+  </script>
+
+  <!-- Attribution Section 1 -->
+  <hr style="margin-top: 40px;">
+  <p style="text-align:center; font-size:14px; color:gray">
      Website adapted from <a href="https://jonbarron.info" target="_blank">Jon Barron’s academic site</a>.
      Template inspiration from <a href="https://github.com/jonbarron/website" target="_blank">his GitHub repository</a>.
-   </p>
+  </p>
 </body>
 </html>
