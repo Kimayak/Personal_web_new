@@ -119,27 +119,6 @@
   </table>
 
 
-  <!-- 🪟 Resume Viewer -->
-  <div id="resumeViewer"
-       style="display:none; position:fixed; top:10%; left:10%; width:80%; height:80%; background:white; border:2px solid #ccc; z-index:1000; box-shadow: 0 0 20px rgba(0,0,0,0.4);">
-    <iframe src="cv/Kimaya_Resume_2025_v1.pdf"
-            style="width:100%; height:100%; border:none;"></iframe>
-  </div>
-
-  <!-- 🧠 Click outside to close -->
-  <script>
-    function openResume() {
-      document.getElementById('resumeViewer').style.display = 'block';
-    }
-
-    window.addEventListener('click', function(e) {
-      const viewer = document.getElementById('resumeViewer');
-      if (viewer.style.display === 'block' && !viewer.contains(e.target)) {
-        viewer.style.display = 'none';
-      }
-    });
-  </script>
-
   <!-- Attribution Section 1 -->
   <hr style="margin-top: 40px;">
   <p style="text-align:center; font-size:14px; color:gray">
